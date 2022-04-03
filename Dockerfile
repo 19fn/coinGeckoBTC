@@ -12,4 +12,4 @@ ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
 RUN pip install -r requirements.txt && mkdir logs
 
-CMD ["./run.sh"]
+CMD ["./scr/gecko_start.sh"]
