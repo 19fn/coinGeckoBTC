@@ -10,6 +10,6 @@ RUN python3 -m venv $VIRTUAL_ENV
 
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 
-RUN pip install -r requirements.txt && mkdir logs && cd logs/
+RUN pip install -r requirements.txt && mkdir logs
 
-CMD ["/opt/coin-gecko/run.sh"]
+CMD ["./run.sh"]
