@@ -1,0 +1,5 @@
+requests 
+lxml
+argparse
+datetime
+BeautifulSoup4

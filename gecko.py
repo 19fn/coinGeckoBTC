@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import requests, lxml, argparse, signal
 from datetime import datetime
-from send_email import send_email
+from fly_email import send_email
 from bs4 import BeautifulSoup as bs4
 
 HEADER = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"}
