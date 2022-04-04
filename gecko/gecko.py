@@ -42,7 +42,7 @@ def coinID(coin):
     else:
         return 0
 
-def getCripto(coin_name,coin_value):
+def getCripto(coin_name):
     #try:
         url = SOURCE
         page = requests.get(url,HEADER)
@@ -57,17 +57,17 @@ def getCripto(coin_name,coin_value):
         coin_price = data_list[1][1:]
         coin_format = coin_price.replace(",","")
         coin_val = ""
-        if coin_format <= f'{coin_value}':
-            coin_val = data_list[1]
+        #if coin_format <= f'{coin_value}':
+        #    coin_val = data_list[1]
         fecha = datetime.now()
         fecha = fecha.strftime('%d/%m/%Y  %H:%M:%S')
-        if coin_val:
-            msg = "[!]",coin.upper(),"value is less equal your estimated:",coin_val
+        #if coin_val:
+        #    msg = "[!]",coin.upper(),"value is less equal your estimated:",coin_val
             #send_email(msg)
 
             #return print("\n[*] Coin:",coin.upper(),"\n[+]",fecha,"\n[+] C-P-1h-24h-7d:",data_list,"\n[+] Value is less equal your estimated:",coin_val,"\n\n")
-        else:
-            return print("\n[*] Coin:",coin.upper(),"\n[+]",fecha,"\n[+] C-P-1h-24h-7d:",data_list,"\n\n")
+        #else:
+        return print("\n[*] Coin:",coin.upper(),"\n[+]",fecha,"\n[+] C-P-1h-24h-7d:",data_list,"\n\n----------------------------------------------------------------------")
     #except:
     #    print("\n\n[!] Ha occurido un error.\n\n")
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     ### CLI ###
     parser = argparse.ArgumentParser(description="[*] CryptoGecko Script by @federicocabreraf.")
     parser.add_argument('-c', '--coin', help='print cripto data.', required=True, action='append')
-    parser.add_argument('-v', '--value', help='notify when value is less equal.', required=True)
+    parser.add_argument('-v', '--value', help='notify when value is less equal.', required=False)
     coin = parser.parse_args()
     for i in range(len(coin.coin)):
-        getCripto(coin.coin[i],coin.value)   
+        getCripto(coin.coin[i])   
