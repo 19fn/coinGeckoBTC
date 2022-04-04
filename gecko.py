@@ -4,7 +4,9 @@ from datetime import datetime
 from fly_email import send_email
 from bs4 import BeautifulSoup as bs4
 
+# CHANGE THIS
 HEADER = {"User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36"}
+SOURCE = "https://www.coingecko.com/en"
 
 def ctrl_c(sig, frame):
     print("\n[!] Se presionó (ctrl_c) saliendo...")
@@ -42,7 +44,7 @@ def coinID(coin):
 
 def getCripto(coin_name,coin_value):
     #try:
-        url = "https://www.coingecko.com/en"
+        url = SOURCE
         page = requests.get(url,HEADER)
         soup = bs4(page.content, "lxml")
         coin = coinName(coin_name)
