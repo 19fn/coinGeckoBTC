@@ -2,11 +2,14 @@
 
 # vars
 count=0
-coin="btc"
+# coin
+c1="btc"
+c2="eth"
+c3="sol"
 value="44000"
 
-while [ $count -le 3 ]; do
+while [ $count -lt 3 ]; do
 	((count++))
-	python3 gecko.py -c ${coin} -v ${value} >> /opt/coin-gecko/logs/gecko.${coin}.log
+	python3 gecko.py -c ${c1} -c ${c2} -c ${c3} >> /opt/coin-gecko/logs/gecko.coin.log
 	sleep 300
 done
