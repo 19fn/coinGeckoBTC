@@ -2,32 +2,40 @@ version: '3.8'
 services:
   # MYSQL
   mysql-db:
-    build: ./mysql
-    image: ${DB_IMG}
+    image: mysql:8.0
     environment:
-      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-      - MYSQL_DATABASE=${MYSQL_DATABASE}
-    env_file:
-      - .env
-    container_name: ${DB_CONTAINER}
+      MYSQL_ROOT_PASSWORD: brown.1087
+      MYSQL_DATABASE: coingecko_db
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: CoinGecko2022
+    container_name: mysql
     ports:
         - "3306:3306"
-    restart: always
+    restart: on-failure
+
+    volumes:
+        - "/opt/mysql_coin_gecko:/var/lib/mysql"
+    
+    healthcheck:
+        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
 
   # APP
-  gecko-app:
-    build: ./gecko
-    image: ${APP_IMG}
-    environment:
-      - DB_HOST=${DB_HOST}
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
-      - DB_NAME=${DB_NAME}
-    env_file:
-      - .env
-    container_name: ${APP_CONTAINER}
-    ports:
-        - "7000:7000"
-    restart: always
-    depends_on:
-      - mysql-db
+  # gecko-app:
+  #   build: ./gecko
+  #   image: ${APP_IMG}
+  #   environment:
+  #     - DB_HOST=${DB_HOST}
+  #     - DB_USER=${DB_USER}
+  #     - DB_PASS=${DB_PASS}
+  #     - DB_NAME=${DB_NAME}
+  #   env_file:
+  #     - .env
+  #   container_name: ${APP_CONTAINER}
+  #   ports:
+  #       - "7000:7000"
+  #   restart: always
+  #   depends_on:
+  #     - mysql-db
