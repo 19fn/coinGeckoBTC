@@ -1,0 +1,15 @@
+spring:
+  # h2:
+  #   console:
+  #     enabled: true
+  datasource:
+    # https://spring.io/guides/gs/accessing-data-mysql/
+    url: "jdbc:mysql://mysql:3306/endavel_db"
+    username: "devuser"
+    password: "ThePassword"
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format-sql: true

@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "bbae184e-de27-40fc-83bb-10f2f61b1966",
+		"name": "batatasquad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1) Get all cities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2) Save city",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Cordoba\",\r\n    \"province\": \"Cordoba\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3) Save initial cities (/many)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n    \"name\": \"Cordoba\",\r\n    \"province\": \"Cordoba\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Bariloche\",\r\n    \"province\": \"Rio Negro\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Mendoza\",\r\n    \"province\": \"Mendoza\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Puerto Madryn\",\r\n    \"province\": \"Chubut\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Wilde\",\r\n    \"province\": \"Buenos Aires\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Reconquista\",\r\n    \"province\": \"Santa Fe\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Gualeguaychu\",\r\n    \"province\": \"Entre Rios\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Merlo\",\r\n    \"province\": \"San Luis\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Salta\",\r\n    \"province\": \"Salta\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Obera\",\r\n    \"province\": \"Corrientes\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Parana\",\r\n    \"province\": \"Entre Rios\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Rosario\",\r\n    \"province\": \"Santa Fe\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Chajari\",\r\n    \"province\": \"Entre Rios\"\r\n    }\r\n    ,\r\n    {\r\n    \"name\": \"Santa Rosa\",\r\n    \"province\": \"La Pampa\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities/many",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities",
+						"many"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4) Get city by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Guale 6 creo\",\r\n    \"province\": \"Chubut\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5) Update city (not implemented yet)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6) Delete city (not implemented yet)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/cities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"cities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "7) Get all destinations",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8) Save destination",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cityId\": \"1\",\r\n    \"highSeasonStartMonth\": \"3\",\r\n    \"highSeasonEndMonth\": \"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "9) Save initial destinations (/many)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"cityId\":\"1\",\r\n        \"highSeasonStartMonth\":\"8\",\r\n        \"highSeasonEndMonth\":\"4\"\r\n    },\r\n    {\r\n        \"cityId\":\"2\",\r\n        \"highSeasonStartMonth\":\"6\",\r\n        \"highSeasonEndMonth\":\"8\"\r\n    },\r\n    {\r\n        \"cityId\":\"3\",\r\n        \"highSeasonStartMonth\":\"8\",\r\n        \"highSeasonEndMonth\":\"4\"\r\n    },\r\n    {\r\n        \"cityId\":\"4\",\r\n        \"highSeasonStartMonth\":\"9\",\r\n        \"highSeasonEndMonth\":\"11\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations/many",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations",
+						"many"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "10) Get destination by Id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Guale 6 creo\",\r\n    \"province\": \"Chubut\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "11) Update destination (not implemented yet)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "12) Delete destination (not implemented yet)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1.0/batatasquad/destinations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1.0",
+						"batatasquad",
+						"destinations"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
